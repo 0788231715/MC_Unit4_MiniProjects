@@ -1,0 +1,5 @@
+[09:16:48] ===== STEP 8: start dashboard, alert monitor, then publisher =====
+[09:17:17] ===== STEP 9: stop dashboard and restart it (publisher keeps running) =====
+[09:17:24] ===== STEP 10: kill -9 the publisher (ungraceful, no DISCONNECT sent) =====
+[09:17:27] ===== STEP 10b: restart publisher, then FREEZE it with SIGSTOP (socket stays open) =====
+[09:17:30] publisher frozen; broker must wait 1.5 x keep-alive (7.5 s) before issuing the LWT

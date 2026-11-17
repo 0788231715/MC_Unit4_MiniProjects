@@ -1,0 +1,22 @@
+1794820945: mosquitto version 2.0.18 starting
+1794820945: Config loaded from ../MP4.1_MQTT_LPWAN/mosquitto_local.conf.
+1794820945: Opening ipv4 listen socket on port 1883.
+1794820945: mosquitto version 2.0.18 running
+1794820946: New connection from 127.0.0.1:42137 on port 1883.
+1794820946: New client connected from 127.0.0.1:42137 as plant1-aggregator (p2, c1, k60).
+1794820947: New connection from 127.0.0.1:53861 on port 1883.
+1794820947: New connection from 127.0.0.1:47503 on port 1883.
+1794820947: New client connected from 127.0.0.1:47503 as sensor-plant1-lineA-temperature (p2, c1, k5).
+1794820947: New connection from 127.0.0.1:53359 on port 1883.
+1794820947: New client connected from 127.0.0.1:53359 as sensor-plant1-lineB-temperature (p2, c1, k5).
+1794820947: New client connected from 127.0.0.1:53861 as sensor-plant1-lineA-vibration (p2, c1, k5).
+1794820967: New connection from 127.0.0.1:41923 on port 1883.
+1794820967: New client connected from 127.0.0.1:41923 as late-joiner (p2, c1, k30).
+1794820970: Client late-joiner closed its connection.
+1794820972: New connection from 127.0.0.1:47977 on port 1883.
+1794820972: New client connected from 127.0.0.1:47977 as sensor-plant1-lineB-vibration (p2, c1, k5).
+1794820984: Client sensor-plant1-lineA-temperature closed its connection.
+1794820994: Client sensor-plant1-lineA-vibration closed its connection.
+1794820994: Client sensor-plant1-lineB-temperature closed its connection.
+1794820994: Client plant1-aggregator closed its connection.
+1794820994: mosquitto version 2.0.18 terminating

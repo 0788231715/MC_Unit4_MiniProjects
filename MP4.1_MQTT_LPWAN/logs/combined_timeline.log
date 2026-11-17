@@ -1,0 +1,42 @@
+[09:16:48] ===== STEP 8: start dashboard, alert monitor, then publisher =====
+[09:16:49] DASHBOARD connected, subscribing to ['factory/line3/temperature', 'factory/line3/status'] at QoS 1
+[09:16:49] ALERT-MONITOR connected, subscribed to wildcard 'factory/+/temperature' QoS 1 (threshold 90.0)
+[09:16:50] DASHBOARD factory/line3/status = online
+[09:16:50] DASHBOARD factory/line3/temperature = 63.7
+[09:16:50] alert-monitor: factory/line3/temperature = 63.7 (ok)
+[09:16:50] connected to broker (reason: Success)
+[09:16:50] published status 'online' (retained) -> factory/line3/status
+[09:16:50] PUBLISH #1 factory/line3/temperature = 63.7 (QoS 1, retain=True)
+[09:16:55] DASHBOARD factory/line3/temperature = 84.6
+[09:16:55] alert-monitor: factory/line3/temperature = 84.6 (ok)
+[09:16:55] PUBLISH #2 factory/line3/temperature = 84.6 (QoS 1, retain=True)
+[09:17:00] DASHBOARD factory/line3/temperature = 82.8
+[09:17:00] alert-monitor: factory/line3/temperature = 82.8 (ok)
+[09:17:00] PUBLISH #3 factory/line3/temperature = 82.8 (QoS 1, retain=True)
+[09:17:05] DASHBOARD factory/line3/temperature = 92.9
+[09:17:05] *** ALERT *** factory/line3/temperature = 92.9 exceeds 90.0
+[09:17:05] PUBLISH #4 factory/line3/temperature = 92.9 (QoS 1, retain=True)
+[09:17:10] DASHBOARD factory/line3/temperature = 69.5
+[09:17:10] alert-monitor: factory/line3/temperature = 69.5 (ok)
+[09:17:10] PUBLISH #5 factory/line3/temperature = 69.5 (QoS 1, retain=True)
+[09:17:15] DASHBOARD factory/line3/temperature = 69.0
+[09:17:15] alert-monitor: factory/line3/temperature = 69.0 (ok)
+[09:17:15] PUBLISH #6 factory/line3/temperature = 69.0 (QoS 1, retain=True)
+[09:17:17] ===== STEP 9: stop dashboard and restart it (publisher keeps running) =====
+[09:17:18] DASHBOARD connected, subscribing to ['factory/line3/temperature', 'factory/line3/status'] at QoS 1
+[09:17:18] DASHBOARD factory/line3/temperature = 69.0 (RETAINED - delivered immediately on subscribe)
+[09:17:18] DASHBOARD factory/line3/status = online (RETAINED - delivered immediately on subscribe)
+[09:17:20] DASHBOARD factory/line3/temperature = 85.7
+[09:17:20] alert-monitor: factory/line3/temperature = 85.7 (ok)
+[09:17:20] PUBLISH #7 factory/line3/temperature = 85.7 (QoS 1, retain=True)
+[09:17:24] ===== STEP 10: kill -9 the publisher (ungraceful, no DISCONNECT sent) =====
+[09:17:24] DASHBOARD factory/line3/status = offline
+[09:17:27] ===== STEP 10b: restart publisher, then FREEZE it with SIGSTOP (socket stays open) =====
+[09:17:28] DASHBOARD factory/line3/status = online
+[09:17:28] DASHBOARD factory/line3/temperature = 63.7
+[09:17:28] alert-monitor: factory/line3/temperature = 63.7 (ok)
+[09:17:28] connected to broker (reason: Success)
+[09:17:28] published status 'online' (retained) -> factory/line3/status
+[09:17:28] PUBLISH #1 factory/line3/temperature = 63.7 (QoS 1, retain=True)
+[09:17:30] publisher frozen; broker must wait 1.5 x keep-alive (7.5 s) before issuing the LWT
+[09:17:41] DASHBOARD factory/line3/status = offline

@@ -1,0 +1,9 @@
+[09:16:50] connected to broker (reason: Success)
+[09:16:50] published status 'online' (retained) -> factory/line3/status
+[09:16:50] PUBLISH #1 factory/line3/temperature = 63.7 (QoS 1, retain=True)
+[09:16:55] PUBLISH #2 factory/line3/temperature = 84.6 (QoS 1, retain=True)
+[09:17:00] PUBLISH #3 factory/line3/temperature = 82.8 (QoS 1, retain=True)
+[09:17:05] PUBLISH #4 factory/line3/temperature = 92.9 (QoS 1, retain=True)
+[09:17:10] PUBLISH #5 factory/line3/temperature = 69.5 (QoS 1, retain=True)
+[09:17:15] PUBLISH #6 factory/line3/temperature = 69.0 (QoS 1, retain=True)
+[09:17:20] PUBLISH #7 factory/line3/temperature = 85.7 (QoS 1, retain=True)

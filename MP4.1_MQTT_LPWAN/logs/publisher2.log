@@ -1,0 +1,3 @@
+[09:17:28] connected to broker (reason: Success)
+[09:17:28] published status 'online' (retained) -> factory/line3/status
+[09:17:28] PUBLISH #1 factory/line3/temperature = 63.7 (QoS 1, retain=True)

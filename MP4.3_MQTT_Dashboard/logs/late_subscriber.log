@@ -1,0 +1,10 @@
+[09:22:47] LATE-JOINER connected, subscribing to plant1/#
+[09:22:47] LATE-JOINER got plant1/lineA/status-temperature = online  retained=True  (+0.05s after connect)
+[09:22:47] LATE-JOINER got plant1/lineA/temperature = 82.71  retained=True  (+0.05s after connect)
+[09:22:47] LATE-JOINER got plant1/lineA/vibration = 8.99  retained=True  (+0.05s after connect)
+[09:22:47] LATE-JOINER got plant1/lineB/temperature = 76.4  retained=True  (+0.05s after connect)
+[09:22:48] LATE-JOINER got plant1/lineB/temperature = 76.16  retained=False  (+0.54s after connect)
+[09:22:48] LATE-JOINER got plant1/lineA/temperature = 91.53  retained=False  (+0.54s after connect)
+[09:22:49] LATE-JOINER got plant1/lineA/vibration = 2.68  retained=False  (+1.54s after connect)
+[09:22:50] LATE-JOINER got plant1/lineA/temperature = 63.96  retained=False  (+2.54s after connect)
+[09:22:50] LATE-JOINER got plant1/lineB/temperature = 67.55  retained=False  (+3.04s after connect)

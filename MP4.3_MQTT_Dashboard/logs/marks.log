@@ -1,0 +1,5 @@
+[09:22:26] ===== 1. start aggregator (single wildcard plant1/+/+) and three publishers =====
+[09:22:47] ===== 2. late-joining subscriber: retained messages arrive immediately =====
+[09:22:52] ===== 3. add a NEW sensor topic plant1/lineB/vibration while running - aggregator code unchanged =====
+[09:23:04] ===== 4. kill -9 the lineA temperature publisher (has LWT) - ungraceful termination =====
+[09:23:08] ===== 5. final summary and shutdown =====

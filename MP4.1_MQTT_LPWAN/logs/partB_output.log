@@ -1,0 +1,44 @@
+Cycles per year = 17520   battery = 19000 mAh   target = 5.0 years
+
+=== Part B: assigned scenario (d = 8 km, n = 3.5) ===
+path loss at the evaluated distance = 123.1 dB
+technology   MCL(dB)  margin(dB)  mAh/cycle  mAh/year   years  >=5y?  link OK?
+NB-IoT         152.0        28.9     0.1025      1796    10.6    yes       yes
+LTE-M          148.0        24.9     0.2818      4937     3.8     NO       yes
+LoRaWAN        151.0        27.9     0.0171       300    63.3    yes       yes
+
+Note: LoRaWAN calculated life exceeds the ~15-year practical cell shelf life; the cell, not the radio, becomes the limit.
+
+=== Lab task 5: add 5G RedCap ===
+with RedCap
+path loss at the evaluated distance = 123.1 dB
+technology   MCL(dB)  margin(dB)  mAh/cycle  mAh/year   years  >=5y?  link OK?
+NB-IoT         152.0        28.9     0.1025      1796    10.6    yes       yes
+LTE-M          148.0        24.9     0.2818      4937     3.8     NO       yes
+LoRaWAN        151.0        27.9     0.0171       300    63.3    yes       yes
+5G RedCap      125.0         1.9     0.1489      2608     7.3    yes       yes
+
+=== Lab task 6: sensitivity to the path-loss exponent n ===
+    n  PL(8km)      NB-IoT       LTE-M     LoRaWAN   5G RedCap
+  2.5    114.1        37.9        33.9        36.9        10.9
+  3.0    118.6        33.4        29.4        32.4         6.4
+  3.5    123.1        28.9        24.9        27.9         1.9
+  4.0    127.6        24.4        20.4        23.4        -2.6
+  4.5    132.1        19.9        15.9        18.9        -7.1
+
+Maximum range (km) where margin = 0:
+    n      NB-IoT       LTE-M     LoRaWAN   5G RedCap
+  3.5        53.5        41.1        50.1         9.1
+  4.0        32.5        25.9        30.7         6.9
+
+=== Lab task 4: fleet-tracked shipping container across an ocean ===
+Distance to the nearest terrestrial base station in mid-ocean is hundreds of km; with the
+same model PL(500 km) = 186.0 dB, far beyond every MCL above (max 152 dB):
+the link-budget sum is not merely 'tight' - there is no terrestrial network to budget against.
+The decision hinges on non-radio axes: satellite/NTN availability, roaming agreements,
+store-and-forward at ports, device cost and mobility - not on a single-distance margin.
+
+Technologies meeting BOTH margin>0 and >=5 years: NB-IoT, LoRaWAN
+Qualitative axes (Section 4.3): no cellular coverage nearby -> NB-IoT / LTE-M need an operator network
+that does not exist on this farm; LoRaWAN needs only 1-2 self-owned gateways, no per-device fee.
+RECOMMENDATION: LoRaWAN (SF12) with 1-2 farm-owned gateways.

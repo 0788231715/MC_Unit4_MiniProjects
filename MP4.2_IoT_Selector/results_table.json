@@ -1,0 +1,32 @@
+[
+  {
+    "scenario": "S1 Smart water meter (underground chamber, 15 yr, 100k units)",
+    "pick": "NB-IoT",
+    "expected": "NB-IoT",
+    "runner_up": "LoRaWAN"
+  },
+  {
+    "scenario": "S2 Fleet-tracked shipping container (global roaming)",
+    "pick": "LTE-M",
+    "expected": "LTE-M",
+    "runner_up": "NB-IoT"
+  },
+  {
+    "scenario": "S3 Factory-floor sensor network (vibration waveforms, AGVs)",
+    "pick": "LTE-M",
+    "expected": "5G RedCap",
+    "runner_up": "5G RedCap"
+  },
+  {
+    "scenario": "S4 Wearable health monitor (ECG, phone as gateway)",
+    "pick": "BLE/Zigbee",
+    "expected": "BLE/Zigbee",
+    "runner_up": "LoRaWAN"
+  },
+  {
+    "scenario": "S5 NEW: livestock collars on a remote 30,000-ha ranch (no cell coverage)",
+    "pick": "LoRaWAN",
+    "expected": "LoRaWAN",
+    "runner_up": "NB-IoT"
+  }
+]

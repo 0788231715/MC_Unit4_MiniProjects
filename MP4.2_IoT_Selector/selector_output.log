@@ -1,0 +1,78 @@
+CAPABILITY MATRIX (0-5)    data_rate    coverage     battery    mobility   ownership        cost
+NB-IoT                           2           5           5           3           1           3   (ownership column shows the 'own' preference fit)
+LTE-M                            4           4           4           5           1           2   (ownership column shows the 'own' preference fit)
+LoRaWAN                          1           4           5           2           5           4   (ownership column shows the 'own' preference fit)
+5G RedCap                        5           3           2           5           2           1   (ownership column shows the 'own' preference fit)
+BLE/Zigbee                       3           1           4           2           5           5   (ownership column shows the 'own' preference fit)
+
+WEIGHTS: {'data_rate': 1.0, 'coverage': 1.5, 'battery': 1.2, 'mobility': 1.0, 'ownership': 1.0, 'cost': 1.0}
+
+### S1 Smart water meter (underground chamber, 15 yr, 100k units)
+Needs (0..5): data_rate=1, coverage=5, battery=5, mobility=1, cost=5, ownership=operator
+rank technology    score   justification
+1    NB-IoT         88.1   fully meets 5/6 axes (data_rate, coverage, battery, mobility, ownership); short on cost (1/5)
+2    LoRaWAN        79.1   fully meets 3/6 axes (data_rate, battery, mobility); short on coverage (3/5), ownership (3/5), cost (3/5)
+3    LTE-M          69.0   fully meets 3/6 axes (data_rate, mobility, ownership); short on coverage (3/5), battery (3/5), cost (0/5)
+4    5G RedCap      39.3   fully meets 3/6 axes (data_rate, mobility, ownership); short on coverage (1/5), battery (0/5), cost (0/5); rules: R6
+5    BLE/Zigbee     30.7   fully meets 3/6 axes (data_rate, mobility, cost); short on coverage (0/5), battery (3/5), ownership (2/5); rules: R2
+RECOMMENDATION: NB-IoT  (margin over runner-up: 9.0 points)
+
+### S2 Fleet-tracked shipping container (global roaming)
+Needs (0..5): data_rate=1, coverage=3, battery=3, mobility=5, cost=4, ownership=operator
+rank technology    score   justification
+1    LTE-M          88.1   fully meets 5/6 axes (data_rate, coverage, battery, mobility, ownership); short on cost (1/5)
+2    NB-IoT         82.1   fully meets 4/6 axes (data_rate, coverage, battery, ownership); short on mobility (1/5), cost (3/5)
+3    5G RedCap      77.9   fully meets 4/6 axes (data_rate, coverage, mobility, ownership); short on battery (3/5), cost (0/5)
+4    LoRaWAN        59.1   fully meets 4/6 axes (data_rate, coverage, battery, cost); short on mobility (0/5), ownership (3/5); rules: R1
+5    BLE/Zigbee     29.1   fully meets 3/6 axes (data_rate, battery, cost); short on coverage (1/5), mobility (0/5), ownership (2/5); rules: R2
+RECOMMENDATION: LTE-M  (margin over runner-up: 6.0 points)
+
+### S3 Factory-floor sensor network (vibration waveforms, AGVs)
+Needs (0..5): data_rate=4, coverage=3, battery=2, mobility=2, cost=3, ownership=own
+rank technology    score   justification
+1    LTE-M          82.1   fully meets 4/6 axes (data_rate, coverage, battery, mobility); short on ownership (1/5), cost (3/5)
+2    5G RedCap      79.1   fully meets 4/6 axes (data_rate, coverage, battery, mobility); short on ownership (2/5), cost (1/5)
+3    BLE/Zigbee     38.1   fully meets 4/6 axes (battery, mobility, ownership, cost); short on data_rate (3/5), coverage (1/5); rules: R2
+4    LoRaWAN        25.5   fully meets 5/6 axes (coverage, battery, mobility, ownership, cost); short on data_rate (0/5); rules: R5
+5    NB-IoT         22.8   fully meets 4/6 axes (coverage, battery, mobility, cost); short on data_rate (1/5), ownership (1/5); rules: R5
+RECOMMENDATION: LTE-M  (margin over runner-up: 3.0 points)
+
+### S4 Wearable health monitor (ECG, phone as gateway)
+Needs (0..5): data_rate=3, coverage=1, battery=1, mobility=2, cost=5, ownership=own
+rank technology    score   justification
+1    BLE/Zigbee    100.0   fully meets 6/6 axes (data_rate, coverage, battery, mobility, ownership, cost); short on nothing
+2    LoRaWAN        72.1   fully meets 4/6 axes (coverage, battery, mobility, ownership); short on data_rate (1/5), cost (3/5); rules: R3
+3    5G RedCap      56.1   fully meets 4/6 axes (data_rate, coverage, battery, mobility); short on ownership (2/5), cost (0/5); rules: R3, R4
+4    LTE-M          53.1   fully meets 4/6 axes (data_rate, coverage, battery, mobility); short on ownership (1/5), cost (0/5); rules: R3, R4
+5    NB-IoT         50.1   fully meets 3/6 axes (coverage, battery, mobility); short on data_rate (3/5), ownership (1/5), cost (1/5); rules: R3, R4
+RECOMMENDATION: BLE/Zigbee  (margin over runner-up: 27.9 points)
+
+### S5 NEW: livestock collars on a remote 30,000-ha ranch (no cell coverage)
+Needs (0..5): data_rate=1, coverage=4, battery=2, mobility=2, cost=5, ownership=own
+rank technology    score   justification
+1    LoRaWAN        94.0   fully meets 5/6 axes (data_rate, coverage, battery, mobility, ownership); short on cost (3/5)
+2    NB-IoT         66.1   fully meets 4/6 axes (data_rate, coverage, battery, mobility); short on ownership (1/5), cost (1/5); rules: R4
+3    LTE-M          63.1   fully meets 4/6 axes (data_rate, coverage, battery, mobility); short on ownership (1/5), cost (0/5); rules: R4
+4    5G RedCap      57.2   fully meets 3/6 axes (data_rate, battery, mobility); short on coverage (3/5), ownership (2/5), cost (0/5); rules: R4
+5    BLE/Zigbee     38.8   fully meets 5/6 axes (data_rate, battery, mobility, ownership, cost); short on coverage (0/5); rules: R2
+RECOMMENDATION: LoRaWAN  (margin over runner-up: 27.9 points)
+
+
+=== VALIDATION: top pick versus expected (Section 4.3 reasoning) ===
+scenario                                                                   tool pick   expected    runner-up   match
+S1 Smart water meter (underground chamber, 15 yr, 100k units)              NB-IoT      NB-IoT      LoRaWAN     YES
+S2 Fleet-tracked shipping container (global roaming)                       LTE-M       LTE-M       NB-IoT      YES
+S3 Factory-floor sensor network (vibration waveforms, AGVs)                LTE-M       5G RedCap   5G RedCap   DIVERGES
+S4 Wearable health monitor (ECG, phone as gateway)                         BLE/Zigbee  BLE/Zigbee  LoRaWAN     YES
+S5 NEW: livestock collars on a remote 30,000-ha ranch (no cell coverage)   LoRaWAN     LoRaWAN     NB-IoT      YES
+
+=== S3 divergence check: what flips the factory-floor pick? ===
+as scored (800 kbps)                                           ['LTE-M:82', '5G RedCap:79', 'BLE/Zigbee:38']
+video/inspection payload 8 Mbps                                ['5G RedCap:79', 'LTE-M:76', 'BLE/Zigbee:35']
+ownership 'either' (public or private network acceptable)      ['LTE-M:91', '5G RedCap:85', 'BLE/Zigbee:37']
+
+=== Weight sensitivity (S2 container) ===
+default      ['LTE-M:88', 'NB-IoT:82', '5G RedCap:78']
+mobility x2  ['LTE-M:90', '5G RedCap:81', 'NB-IoT:74']
+cost x2      ['NB-IoT:79', 'LTE-M:79', '5G RedCap:68']
+battery x2   ['LTE-M:89', 'NB-IoT:84', '5G RedCap:76']

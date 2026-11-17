@@ -1,0 +1,118 @@
+
+
+
+
+
+
+
+
+[09:22:26] ===== 1. start aggregator (single wildcard plant1/+/+) and three publishers =====
+[09:22:26] AGGREGATOR connected; single wildcard subscription 'plant1/+/+' (QoS 1)
+[09:22:27] STATUS  plant1/lineA/status-temperature = online
+[09:22:28] NEW TOPIC discovered automatically: plant1/lineB/temperature
+[09:22:28] READING plant1/lineB/temperature = 65.28  (thr 85.0) ok
+[09:22:28] NEW TOPIC discovered automatically: plant1/lineA/temperature
+[09:22:28] READING plant1/lineA/temperature = 81.8  (thr 88.0) ok
+[09:22:28] NEW TOPIC discovered automatically: plant1/lineA/vibration
+[09:22:28] READING plant1/lineA/vibration = 2.81  (thr 7.5) ok
+[09:22:30] READING plant1/lineA/temperature = 85.96  (thr 88.0) ok
+[09:22:30] READING plant1/lineB/temperature = 82.07  (thr 85.0) ok
+[09:22:31] READING plant1/lineA/vibration = 8.7  (thr 7.5) *** ALERT ***
+[09:22:32] READING plant1/lineA/temperature = 87.83  (thr 88.0) ok
+[09:22:33] READING plant1/lineB/temperature = 80.32  (thr 85.0) ok
+[09:22:34] READING plant1/lineA/vibration = 2.01  (thr 7.5) ok
+[09:22:34] READING plant1/lineA/temperature = 92.99  (thr 88.0) *** ALERT ***
+[09:22:35] READING plant1/lineB/temperature = 75.33  (thr 85.0) ok
+[09:22:36] READING plant1/lineA/temperature = 85.9  (thr 88.0) ok
+[09:22:37] READING plant1/lineA/vibration = 6.64  (thr 7.5) ok
+[09:22:38] READING plant1/lineB/temperature = 66.91  (thr 85.0) ok
+[09:22:38] READING plant1/lineA/temperature = 92.28  (thr 88.0) *** ALERT ***
+[09:22:38] ---------------- SUMMARY (latest value per topic) ----------------
+[09:22:40] READING plant1/lineA/vibration = 1.68  (thr 7.5) ok
+[09:22:40] READING plant1/lineA/temperature = 61.02  (thr 88.0) ok
+[09:22:40] READING plant1/lineB/temperature = 85.36  (thr 85.0) *** ALERT ***
+[09:22:42] READING plant1/lineA/temperature = 76.3  (thr 88.0) ok
+[09:22:43] READING plant1/lineB/temperature = 85.85  (thr 85.0) *** ALERT ***
+[09:22:43] READING plant1/lineA/vibration = 2.98  (thr 7.5) ok
+[09:22:44] READING plant1/lineA/temperature = 93.02  (thr 88.0) *** ALERT ***
+[09:22:45] READING plant1/lineB/temperature = 76.4  (thr 85.0) ok
+[09:22:46] READING plant1/lineA/vibration = 8.99  (thr 7.5) *** ALERT ***
+[09:22:46] READING plant1/lineA/temperature = 82.71  (thr 88.0) ok
+[09:22:47] ===== 2. late-joining subscriber: retained messages arrive immediately =====
+[09:22:47] LATE-JOINER connected, subscribing to plant1/#
+[09:22:47] LATE-JOINER got plant1/lineA/status-temperature = online  retained=True  (+0.05s after connect)
+[09:22:47] LATE-JOINER got plant1/lineA/temperature = 82.71  retained=True  (+0.05s after connect)
+[09:22:47] LATE-JOINER got plant1/lineA/vibration = 8.99  retained=True  (+0.05s after connect)
+[09:22:47] LATE-JOINER got plant1/lineB/temperature = 76.4  retained=True  (+0.05s after connect)
+[09:22:48] READING plant1/lineB/temperature = 76.16  (thr 85.0) ok
+[09:22:48] READING plant1/lineA/temperature = 91.53  (thr 88.0) *** ALERT ***
+[09:22:48] LATE-JOINER got plant1/lineB/temperature = 76.16  retained=False  (+0.54s after connect)
+[09:22:48] LATE-JOINER got plant1/lineA/temperature = 91.53  retained=False  (+0.54s after connect)
+[09:22:49] READING plant1/lineA/vibration = 2.68  (thr 7.5) ok
+[09:22:49] LATE-JOINER got plant1/lineA/vibration = 2.68  retained=False  (+1.54s after connect)
+[09:22:50] READING plant1/lineA/temperature = 63.96  (thr 88.0) ok
+[09:22:50] ---------------- SUMMARY (latest value per topic) ----------------
+[09:22:50] READING plant1/lineB/temperature = 67.55  (thr 85.0) ok
+[09:22:50] LATE-JOINER got plant1/lineA/temperature = 63.96  retained=False  (+2.54s after connect)
+[09:22:50] LATE-JOINER got plant1/lineB/temperature = 67.55  retained=False  (+3.04s after connect)
+[09:22:52] ===== 3. add a NEW sensor topic plant1/lineB/vibration while running - aggregator code unchanged =====
+[09:22:52] READING plant1/lineA/vibration = 6.13  (thr 7.5) ok
+[09:22:52] READING plant1/lineA/temperature = 76.42  (thr 88.0) ok
+[09:22:53] NEW TOPIC discovered automatically: plant1/lineB/vibration
+[09:22:53] READING plant1/lineB/vibration = 8.65  (thr 7.5) *** ALERT ***
+[09:22:53] READING plant1/lineB/temperature = 60.1  (thr 85.0) ok
+[09:22:54] READING plant1/lineA/temperature = 68.63  (thr 88.0) ok
+[09:22:55] READING plant1/lineA/vibration = 4.67  (thr 7.5) ok
+[09:22:55] READING plant1/lineB/temperature = 71.87  (thr 85.0) ok
+[09:22:56] READING plant1/lineB/vibration = 8.58  (thr 7.5) *** ALERT ***
+[09:22:56] READING plant1/lineA/temperature = 79.03  (thr 88.0) ok
+[09:22:58] READING plant1/lineA/vibration = 4.63  (thr 7.5) ok
+[09:22:58] READING plant1/lineB/temperature = 78.73  (thr 85.0) ok
+[09:22:58] READING plant1/lineA/temperature = 80.09  (thr 88.0) ok
+[09:22:59] READING plant1/lineB/vibration = 1.45  (thr 7.5) ok
+[09:23:00] READING plant1/lineA/temperature = 60.46  (thr 88.0) ok
+[09:23:00] READING plant1/lineB/temperature = 62.22  (thr 85.0) ok
+[09:23:01] READING plant1/lineA/vibration = 4.96  (thr 7.5) ok
+[09:23:02] READING plant1/lineB/vibration = 1.68  (thr 7.5) ok
+[09:23:02] READING plant1/lineA/temperature = 67.59  (thr 88.0) ok
+[09:23:02] ---------------- SUMMARY (latest value per topic) ----------------
+[09:23:03] READING plant1/lineB/temperature = 85.4  (thr 85.0) *** ALERT ***
+[09:23:04] ===== 4. kill -9 the lineA temperature publisher (has LWT) - ungraceful termination =====
+[09:23:04] READING plant1/lineA/vibration = 2.54  (thr 7.5) ok
+[09:23:04] READING plant1/lineA/temperature = 69.78  (thr 88.0) ok
+[09:23:04] STATUS  plant1/lineA/status-temperature = offline  <-- LWT / state change
+[09:23:05] READING plant1/lineB/vibration = 7.68  (thr 7.5) *** ALERT ***
+[09:23:05] READING plant1/lineB/temperature = 67.43  (thr 85.0) ok
+[09:23:07] READING plant1/lineA/vibration = 7.64  (thr 7.5) *** ALERT ***
+[09:23:08] ===== 5. final summary and shutdown =====
+[09:23:08] READING plant1/lineB/vibration = 6.89  (thr 7.5) ok
+[09:23:08] READING plant1/lineB/temperature = 67.45  (thr 85.0) ok
+[09:23:10] READING plant1/lineA/vibration = 1.72  (thr 7.5) ok
+[09:23:10] READING plant1/lineB/temperature = 61.35  (thr 85.0) ok
+[09:23:11] READING plant1/lineB/vibration = 6.36  (thr 7.5) ok
+[09:23:13] READING plant1/lineA/vibration = 2.87  (thr 7.5) ok
+[09:23:13] READING plant1/lineB/temperature = 91.92  (thr 85.0) *** ALERT ***
+[09:23:14] READING plant1/lineB/vibration = 3.47  (thr 7.5) ok
+[09:23:14] ---------------- SUMMARY (latest value per topic) ----------------
+plant1/lineA/temperature       92.28   81.80   92.99    6   88.0  09:22:38
+plant1/lineA/temperature       63.96   61.02   93.02   12   88.0  09:22:50
+plant1/lineA/temperature       67.59   60.46   93.02   18   88.0  09:23:02
+plant1/lineA/temperature       69.78   60.46   93.02   19   88.0  09:23:04
+plant1/lineA/vibration          6.64    2.01    8.70    4    7.5  09:22:37
+plant1/lineA/vibration          2.68    1.68    8.99    8    7.5  09:22:49
+plant1/lineA/vibration          4.96    1.68    8.99   12    7.5  09:23:01
+plant1/lineA/vibration          2.87    1.68    8.99   16    7.5  09:23:13
+plant1/lineB/temperature       66.91   65.28   82.07    5   85.0  09:22:38
+plant1/lineB/temperature       76.16   65.28   85.85    9   85.0  09:22:48
+plant1/lineB/temperature       62.22   60.10   85.85   14   85.0  09:23:00
+plant1/lineB/temperature       91.92   60.10   91.92   19   85.0  09:23:13
+plant1/lineB/vibration          1.68    1.45    8.65    4    7.5  09:23:02
+plant1/lineB/vibration          3.47    1.45    8.65    8    7.5  09:23:14
+status: {'plant1/lineA/status-temperature': 'online'}
+status: {'plant1/lineA/status-temperature': 'online'}
+status: {'plant1/lineA/status-temperature': 'online'}
+status: {'plant1/lineA/status-temperature': 'offline'}
+topic                         latest     min     max    n    thr  last-seen
+topic                         latest     min     max    n    thr  last-seen
+topic                         latest     min     max    n    thr  last-seen
+topic                         latest     min     max    n    thr  last-seen

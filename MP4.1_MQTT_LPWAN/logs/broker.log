@@ -1,0 +1,20 @@
+1794820607: mosquitto version 2.0.18 starting
+1794820607: Config loaded from mosquitto_local.conf.
+1794820607: Opening ipv4 listen socket on port 1883.
+1794820607: mosquitto version 2.0.18 running
+1794820609: New connection from 127.0.0.1:47125 on port 1883.
+1794820609: New connection from 127.0.0.1:35767 on port 1883.
+1794820609: New client connected from 127.0.0.1:47125 as dashboard (p2, c1, k60).
+1794820609: New client connected from 127.0.0.1:35767 as alert-monitor (p2, c1, k60).
+1794820610: New connection from 127.0.0.1:36559 on port 1883.
+1794820610: New client connected from 127.0.0.1:36559 as line3-temp-sensor (p2, c1, k5).
+1794820637: Client dashboard closed its connection.
+1794820638: New connection from 127.0.0.1:34469 on port 1883.
+1794820638: New client connected from 127.0.0.1:34469 as dashboard-restarted (p2, c1, k60).
+1794820644: Client line3-temp-sensor closed its connection.
+1794820648: New connection from 127.0.0.1:55117 on port 1883.
+1794820648: New client connected from 127.0.0.1:55117 as line3-temp-sensor (p2, c1, k5).
+1794820661: Client line3-temp-sensor has exceeded timeout, disconnecting.
+1794820663: Client dashboard-restarted closed its connection.
+1794820663: Client alert-monitor closed its connection.
+1794820663: mosquitto version 2.0.18 terminating

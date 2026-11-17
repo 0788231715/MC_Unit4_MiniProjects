@@ -1,0 +1,9 @@
+[09:16:49] ALERT-MONITOR connected, subscribed to wildcard 'factory/+/temperature' QoS 1 (threshold 90.0)
+[09:16:50] alert-monitor: factory/line3/temperature = 63.7 (ok)
+[09:16:55] alert-monitor: factory/line3/temperature = 84.6 (ok)
+[09:17:00] alert-monitor: factory/line3/temperature = 82.8 (ok)
+[09:17:05] *** ALERT *** factory/line3/temperature = 92.9 exceeds 90.0
+[09:17:10] alert-monitor: factory/line3/temperature = 69.5 (ok)
+[09:17:15] alert-monitor: factory/line3/temperature = 69.0 (ok)
+[09:17:20] alert-monitor: factory/line3/temperature = 85.7 (ok)
+[09:17:28] alert-monitor: factory/line3/temperature = 63.7 (ok)

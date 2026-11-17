@@ -1,0 +1,8 @@
+[09:17:18] DASHBOARD connected, subscribing to ['factory/line3/temperature', 'factory/line3/status'] at QoS 1
+[09:17:18] DASHBOARD factory/line3/temperature = 69.0 (RETAINED - delivered immediately on subscribe)
+[09:17:18] DASHBOARD factory/line3/status = online (RETAINED - delivered immediately on subscribe)
+[09:17:20] DASHBOARD factory/line3/temperature = 85.7
+[09:17:24] DASHBOARD factory/line3/status = offline
+[09:17:28] DASHBOARD factory/line3/status = online
+[09:17:28] DASHBOARD factory/line3/temperature = 63.7
+[09:17:41] DASHBOARD factory/line3/status = offline

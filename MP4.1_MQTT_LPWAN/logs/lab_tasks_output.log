@@ -1,0 +1,36 @@
+=== LAB 1: humidity sensor + alert subscriber on factory/line3/+ ===
+[09:18:41] ALERT-MONITOR connected, subscribed to wildcard 'factory/line3/+' QoS 1 (threshold 90.0)
+[09:18:43] alert-monitor: factory/line3/temperature = 63.7 (ok)
+[09:18:43] alert-monitor: factory/line3/humidity = 54.0 (ok)
+[09:18:45] alert-monitor: factory/line3/temperature = 84.6 (ok)
+[09:18:45] alert-monitor: factory/line3/humidity = 72.1 (ok)
+[09:18:47] alert-monitor: factory/line3/temperature = 82.8 (ok)
+[09:18:47] alert-monitor: factory/line3/humidity = 61.8 (ok)
+[09:18:49] *** ALERT *** factory/line3/temperature = 92.9 exceeds 90.0
+[09:18:49] alert-monitor: factory/line3/humidity = 75.6 (ok)
+[09:18:51] alert-monitor: factory/line3/temperature = 69.5 (ok)
+[09:18:51] alert-monitor: factory/line3/humidity = 76.9 (ok)
+-> one wildcard subscription receives BOTH temperature and humidity; no code change was needed.
+
+=== LAB 2: crash immediately after publishing the final reading (10 trials each) ===
+QoS  kill delay after publish()      received
+0    immediately (0 ms)                 10/10
+1    immediately (0 ms)                 10/10
+2    immediately (0 ms)                  9/10
+0    50 ms                              10/10
+1    50 ms                              10/10
+2    50 ms                              10/10
+-> Observed: the final reading arrived in 59 of 60 trials (the one miss: QoS 2, killed at 0 ms) because
+   paho writes the packet to the socket inside publish() on a healthy loopback link. The QoS
+   levels differ in what happens when the LINK or BROKER fails (Lab 3), not when the publisher
+   process dies after a successful write. A crash BEFORE the write loses the message at any QoS.
+   The LWT, not QoS, is what tells subscribers that the publisher is gone.
+
+=== LAB 3: broker killed for 3 s while publisher sends 120 messages (100 ms apart) ===
+QoS   published  received  lost    publish() calls rejected while offline
+0           120        70    50                                        50
+1           120       120     0                                        50
+-> QoS 0 messages published while the client is disconnected (outage + reconnect back-off,
+   hence more than the 30 sent during the 3 s outage) are dropped; QoS 1 messages are queued
+   in the client and retransmitted after reconnect (duplicates possible, losses not).
+
